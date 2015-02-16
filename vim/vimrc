@@ -1,0 +1,81 @@
+""""""""""""""""""""""""""""""""""""""""
+" General Behaviors {{{1
+""""""""""""""""""""""""""""""""""""""""
+" This line is replaced by the file minimal.vimrc
+source <sfile>:p:h/minimal.vimrc
+
+set hlsearch " highlight searches
+
+" map <C-L> (redraw screen) to also
+" turn off search highlighting until the next search
+nnoremap <C-L> :nohlsearch<CR><C-L>
+
+" command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made
+if !exists(":DiffOrig")
+  command DiffOrig vertical new | set buftype=nofile | read # | 0d_ | diffthis
+          \ | wincmd p | diffthis
+endif
+
+" Modelines have historically been a source of security vulnerabilities
+set nomodeline
+
+" disable Q in normal mode
+noremap Q <nop>
+		
+""""""""""""""""""""""""""""""""""""""""
+" Visual and audible Part {{{1
+""""""""""""""""""""""""""""""""""""""""
+set number " show line numbers
+set scrolloff=4 " keep 4 lines when scrolling
+set wildmode=longest,full
+set completeopt= " turn off preview window when autocompletion
+
+set visualbell t_vb= " turn off error beep/flash
+set novisualbell " turn off visual bell
+
+""""""""""""""""""""""""""""""""""""""""
+" Formatting Part {{{1
+""""""""""""""""""""""""""""""""""""""""
+set autoindent " cursor indented like last line when starting a new line
+set expandtab " tab actually insert spaces
+set tabstop=2 " width of a tab character
+set softtabstop=2 " amount of whitespace to be inserted
+set shiftwidth=2 " amount of whitespace with indentation
+" to insert tab ('\t') character : i_ctrl-v <tab>
+
+augroup realTabForMakefiles
+  autocmd FileType make setlocal noexpandtab
+augroup end
+
+""""""""""""""""""""""""""""""""""""""""
+" Backups Part {{{1
+""""""""""""""""""""""""""""""""""""""""
+" all backups in one place
+" the directory must exist (default : working directory)
+
+set backup
+set backupdir=~/.vim/backups,.
+
+set swapfile
+set directory=~/.vim/backups,. " directory for swap files
+
+set writebackup " make backup before overwriting a file
+
+""""""""""""""""""""""""""""""""""""""""
+" For set spell spl=fr {{{1
+""""""""""""""""""""""""""""""""""""""""
+" in /usr/share/vim/vim74/spell/
+" wget http://ftp.vim.org/vim/runtime/spell/fr.latin1.spl
+" wget http://ftp.vim.org/vim/runtime/spell/fr.latin1.sug
+" wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl
+" wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug
+
+""""""""""""""""""""""""""""""""""""""""
+" Vundle Part {{{1
+""""""""""""""""""""""""""""""""""""""""
+" to set up Vundle :
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+" This line is replaced by the file vundle.vimrc
+source <sfile>:p:h/vundle.vimrc
