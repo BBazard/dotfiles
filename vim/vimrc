@@ -1,8 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""
 " General Behaviors {{{1
 """"""""""""""""""""""""""""""""""""""""
-" This line is replaced by the file minimal.vimrc
-source <sfile>:p:h/minimal.vimrc
+" This line is replaced by the file minimal_vimrc.vim
+source <sfile>:p:h/minimal_vimrc.vim
 
 " Modelines have historically been a source of security vulnerabilities
 set nomodeline
@@ -86,5 +86,5 @@ set writebackup " make backup before overwriting a file
 " to set up Vundle :
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-" This line is replaced by the file vundle.vimrc
-source <sfile>:p:h/vundle.vimrc
+" This line is replaced by the file vundle_vimrc.vim
+source <sfile>:p:h/vundle_vimrc.vim
