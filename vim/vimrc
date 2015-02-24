@@ -4,11 +4,20 @@
 " This line is replaced by the file minimal.vimrc
 source <sfile>:p:h/minimal.vimrc
 
+" Modelines have historically been a source of security vulnerabilities
+set nomodeline
+
 set hlsearch " highlight searches
 
 " map <C-L> (redraw screen) to also
 " turn off search highlighting until the next search
 nnoremap <C-L> :nohlsearch<CR><C-L>
+
+" in insert mode : make the word before the cursor uppercase
+noremap! <C-F> <Esc>gUiw`]a
+
+" disable Q in normal mode
+noremap Q <nop>
 
 " command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made
@@ -17,11 +26,11 @@ if !exists(":DiffOrig")
           \ | wincmd p | diffthis
 endif
 
-" Modelines have historically been a source of security vulnerabilities
-set nomodeline
-
-" disable Q in normal mode
-noremap Q <nop>
+" require wmctrl
+if !exists(":Fullscreen")
+  command Fullscreen read ! wmctrl -r :ACTIVE: -b toggle,fullscreen
+  autocmd VimLeave * ! wmctrl -r :ACTIVE: -b remove,fullscreen
+endif
 		
 """"""""""""""""""""""""""""""""""""""""
 " Visual and audible Part {{{1
