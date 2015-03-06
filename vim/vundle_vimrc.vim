@@ -8,6 +8,8 @@ call vundle#begin()
   " let Vundle manage Vundle ; required by Vundle
   Plugin 'gmarik/Vundle.vim'
 
+  Plugin 'alx741/vinfo'
+
   Plugin 'Valloric/YouCompleteMe' " {{{2
 
   " set up You Complete Me :
