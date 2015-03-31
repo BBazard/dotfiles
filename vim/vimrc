@@ -26,12 +26,6 @@ if !exists(":DiffOrig")
           \ | wincmd p | diffthis
 endif
 
-" require wmctrl
-if !exists(":Fullscreen")
-  command Fullscreen read ! wmctrl -r :ACTIVE: -b toggle,fullscreen
-  autocmd VimLeave * ! wmctrl -r :ACTIVE: -b remove,fullscreen
-endif
-		
 """"""""""""""""""""""""""""""""""""""""
 " Visual and audible Part {{{1
 """"""""""""""""""""""""""""""""""""""""
