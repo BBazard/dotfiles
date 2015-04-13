@@ -1,5 +1,5 @@
 # .ycm_extra_conf.py template for c projects
-# the names of the files needs to be *.c and *.h
+# the names of the files need to be *.c and *.h
 
 import os
 
@@ -22,7 +22,7 @@ flags = [
 '/usr/local/include',
 # custom headers
 '-I',
-'DirectoryOfThisScript()/customheader.h',
+DirectoryOfThisScript() + '/customheader.h',
 ]
 
 def FlagsForFile(filename, **kwargs):
