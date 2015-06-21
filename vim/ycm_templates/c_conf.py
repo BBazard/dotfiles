@@ -13,8 +13,7 @@ flags = [
 '-Wextra',
 '-pedantic',
 '-Werror',
-'-ansi',
-'-std=c99',
+'-std=c11',
 # system headers
 '-isystem',
 '/usr/include',
