@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'alx741/vinfo'
 
+  Plug 'suan/vim-instant-markdown'
+
   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
       let g:UltiSnipsExpandTrigger="<tab>"
@@ -17,9 +19,8 @@ call plug#begin('~/.vim/plugged')
       " where :UltiSnipsEdit show snippets
       let g:UltiSnipsEditSplit="vertical"
 
-  " Apparently vim-plug need github repositories with a branch "master"
-  " so YCM-Generator is in fact a fork, it could be outdated
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' } | Plug 'aumuell/YCM-Generator'
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+  \| Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
       " use .ycm_extra_conf.py in the current directory or the one below
       let g:ycm_global_ycm_extra_conf = ""
