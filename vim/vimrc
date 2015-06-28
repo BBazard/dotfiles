@@ -55,7 +55,10 @@ augroup end
 " Backups Part {{{1
 """"""""""""""""""""""""""""""""""""""""
 " all backups in one place
-" the directory must exist (default : working directory)
+
+if empty(glob("~/.vim/backups"))
+  execute '!mkdir -p ~/.vim/backups'
+endif
 
 set backup
 set backupdir=~/.vim/backups,.
@@ -75,10 +78,9 @@ set writebackup " make backup before overwriting a file
 " wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug
 
 """"""""""""""""""""""""""""""""""""""""
-" Vundle Part {{{1
+" vim-plug Part {{{1
 """"""""""""""""""""""""""""""""""""""""
-" to set up Vundle :
-" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-" This line is replaced by the file vundle_vimrc.vim
-source <sfile>:p:h/vundle_vimrc.vim
+" This line is replaced by the file plug.vim
+source <sfile>:p:h/plug.vim
+
