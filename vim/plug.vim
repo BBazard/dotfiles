@@ -25,7 +25,8 @@ call plug#begin('~/.vim/plugged')
       " where :UltiSnipsEdit show snippets
       let g:UltiSnipsEditSplit="vertical"
 
-"  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+"  " Consider removing --system-libclang if problems
+"  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang' }
 "  \| Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 "
 "      " use .ycm_extra_conf.py in the current directory or the one below
@@ -41,6 +42,11 @@ call plug#begin('~/.vim/plugged')
 "      " but leave the semantic engine
 "      let g:ycm_min_num_of_chars_for_completion = 99
 "
+"      let g:ycm_always_populate_location_list = 1
+"
+"      let g:ycm_autoclose_preview_window_after_completion = 0
+"      let g:ycm_autoclose_preview_window_after_insertion = 1
+
 
 call plug#end()
 
