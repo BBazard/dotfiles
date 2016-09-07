@@ -68,6 +68,9 @@ set directory=~/.vim/backups,. " directory for swap files
 
 set writebackup " make backup before overwriting a file
 
+" don't backup in clear encrypted files with pass(1)
+au BufNewFile,BufRead /dev/shm/pass.* setlocal noswapfile nobackup noundofile nowritebackup
+
 """"""""""""""""""""""""""""""""""""""""
 " For set spell spl=fr {{{1
 """"""""""""""""""""""""""""""""""""""""
